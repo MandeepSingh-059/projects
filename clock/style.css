@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color:#79b17c;
+    border-radius: 20px;
+    font-size: 60px;
+
+}
+
+#day{
+    position: relative;
+    text-align: center;
+}
+
+#clock{
+    position: relative;
+    text-align: center;
+    color:#3cd651;
+}
+
+#format{
+    position: relative;
+    text-align: center;
+}
+
+#hr12{
+    color:#3cd651;
+}
