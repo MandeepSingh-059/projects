@@ -94,6 +94,10 @@ function hr24Format() {
     let sec = time.getSeconds();
     setDay(time);
 
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
     let currentTime = hour + ":" + min + ":" + sec;
     document.getElementById("clock")
             .innerHTML = currentTime;   
