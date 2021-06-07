@@ -1,51 +1,64 @@
 function setDay(time){
     let day = time.getDay();
-    if(day == 1)
+    console.log(day);
+    if(day == 0)
         document.getElementById("sunday").style.color = "#3cd651";
-    else if(day == 2)
+    else if(day == 1)
         document.getElementById("monday").style.color = "#3cd651";
-    else if(day == 3)
+    else if(day == 2)
         document.getElementById("tuesday").style.color = "#3cd651";
-    else if(day == 4)
+    else if(day == 3)
         document.getElementById("wednesday").style.color = "#3cd651";
-    else if(day == 5)
+    else if(day == 4)
         document.getElementById("thursday").style.color = "#3cd651";
-    else if(day == 6)
+    else if(day == 5)
         document.getElementById("friday").style.color = "#3cd651";
-    else if(day == 7)
+    else if(day == 6)
         document.getElementById("saturday").style.color = "#3cd651";
 }
 
-let Timer12 = setInterval(hr12Format, 1000);
-hr12Format();
+var counter = 0;
+var Timer12;
+var Timer24;
+Timer12 = setInterval(hr12Format, 1000);
+Timer24 = setInterval(hr24Format, 1000);
+set12hrFormat(Timer24);
 
 function setFormat(){
     document.getElementById("hr12").onclick = function(){
         document.getElementById("hr12").style.color = "#3cd651";
         document.getElementById("hr24").style.color = "#79b17c";
 
-        set12hrFormat();
+        set12hrFormat(Timer24);
 
     }
     document.getElementById("hr24").onclick = function(){
         document.getElementById("hr24").style.color = "#3cd651";
         document.getElementById("hr12").style.color = "#79b17c";
         
-        set24hrFormat();
+        set24hrFormat(Timer12);
     }
 }
 setFormat();
 
-function set12hrFormat() {
-    let Timer12 = setInterval(hr12Format, 1000);
-    hr12Format();
-    clearInterval(Timer24);
+function set24hrFormat(Timer12) {
+    clearInterval(Timer12);
+    Timer24 = setInterval(hr24Format, 1000);
+    hr24Format();
 }
 
-function set24hrFormat() {
-    let Timer24 = setInterval(hr24Format, 1000);
-    hr24Format();
-    clearInterval(Timer12);
+function set12hrFormat(Timer24) {
+    if(counter == 0){
+        clearInterval(Timer24);
+        hr12Format();
+        counter++;
+    }
+
+    else{
+    clearInterval(Timer24);
+    Timer12 = setInterval(hr12Format, 1000);
+    hr12Format();
+    }
 }
 
 function hr12Format() {
