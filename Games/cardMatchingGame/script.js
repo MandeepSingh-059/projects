@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     cardArray.sort(() => 0.5 - Math.random()); //=> arrow operator used to shorten the syntax 
     //()means function() is being made and it has only one line i.e. 0.5-Math.random()
+    //here we are sorting the array randomly 
+    //0.5-math.random will give +ve and -ve values randomly which we use as compare function for sort
 
     //board
     const resultDisplay = document.querySelector('#result');
