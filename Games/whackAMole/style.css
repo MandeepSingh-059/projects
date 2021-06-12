@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.grid{
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;/*justify-self/justify-items not implemented in flexbox sp we ise justify-content*/
+    align-content: center;
+    width: 600px;
+    height: 600px;
+}
+
+.mole{
+    background-image: url('./mole.png');
+    background-size: cover;
+}
