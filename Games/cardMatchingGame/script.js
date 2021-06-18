@@ -84,20 +84,25 @@ document.addEventListener('DOMContentLoaded', () =>{
         const optionOneId = cardsChosenId[0];
         const optionTwoId = cardsChosenId[1];
         if(cardsChosen[0] === cardsChosen[1]){//check if names of the 2 cards is same or not
-            alert('You Found a Match');
+            //alert('You Found a Match');
             cards[optionOneId].setAttribute('src', './images/white.png');
             cards[optionTwoId].setAttribute('src', './images/white.png');
+      
+            //remove eventlistener otherwise we can match already matched cards again and again 
+            cards[optionOneId].removeEventListener('click', flipCard);
+            cards[optionTwoId].removeEventListener('click', flipCard);
+            
             cardsWon.push(cardsChosen);
         } else{
             cards[optionOneId].setAttribute('src', './images/blank.png');
             cards[optionTwoId].setAttribute('src', './images/blank.png');
-            alert('Sorry Try Again');
+            //alert('Sorry Try Again');
         }
         cardsChosen = [];
         cardsChosenId = [];
         resultDisplay.textContent = cardsWon.length.toString();
         if(cardsWon.length === cardArray.length/2){
-            resultDisplay.textContent = 'Congratultions You Won!!';
+            resultDisplay.textContent = cardsWon.length.toString()+ ' Congratultions You Won!!';
         }
     }
 
