@@ -5,6 +5,10 @@
     font-family: monospace;
 }
 
+html{
+    background-color: black;
+}
+
 .container{
     position: absolute;
     top: 50%;
