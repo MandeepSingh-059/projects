@@ -7,7 +7,6 @@
 .square {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
 }
 
 .grid{
@@ -17,11 +16,59 @@
     flex-flow: row wrap;
     justify-content: center;/*justify-self/justify-items not implemented in flexbox sp we ise justify-content*/
     align-content: center;
-    width: 600px;
-    height: 600px;
+    width: 610px;
+    height: 610px;
 }
 
 .mole{
     background-image: url('./mole.png');
     background-size: cover;
+}
+
+
+/*Styling*/
+
+html{
+    background-color: black;
+    font-family: monospace;
+    color: rgb(26, 219, 26);
+}
+
+body{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.grid{
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.tile{
+
+    background-color: rgb(168, 66, 18);
+    margin: 1px;
+    border: 1px solid blue;
+    border-radius: 30px;
+}
+
+@media only screen and (max-width: 630px){
+    .grid{
+        width: 310px;
+        height: 310px;
+    }
+    .square{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+#title p{
+    font-size: 2rem;
+    border: 2px solid white;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translateX(-50%);
 }
