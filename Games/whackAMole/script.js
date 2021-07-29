@@ -54,7 +54,7 @@ function countDown(){
 function resetBoard(){
     clearInterval(counter);
     
-    const resetBtn = document.createElement("p");//create a para 
+    const resetBtn = document.createElement("p");//create a para
     const resetMsg = document.createTextNode("Click here to play again");//create a text node
     resetBtn.appendChild(resetMsg);//append text to para
     
