@@ -135,7 +135,7 @@ body {
   overflow: hidden;
 }
 #menu-tile:hover, #specials-tile:hover, #map-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
+  box-shadow: 0 1px 5px 1px #e7e247;
 }
 #menu-tile {
   background: url('../images/menu-tile.jpg') no-repeat;
