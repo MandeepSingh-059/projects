@@ -11,9 +11,21 @@ export default function TextForm(props){
     const handleLoClick = () => {
         setText(text.toLowerCase());
     }
+    const handleMemeClick = () => {
+        let str = '';
+        for(let i=0; i<text.length; i++){
+            if(i%2 === 0){
+                str += text[i].toUpperCase();
+            }
+            else{
+                str += text[i].toLowerCase();
+            }
+        }
+        setText(str);
+    }
     
     const [text, setText] = useState('');
-    const noOfWords = text.length == 0 ? text.split(" ").length-1 : text.split(" ").length;
+    const noOfWords = text.length === 0 ? text.split(" ").length-1 : text.split(" ").length;
 
     return(
         <>
@@ -22,8 +34,9 @@ export default function TextForm(props){
                 <label htmlFor="Textarea">{props.heading}</label>
             </h4>
             <textarea className="form-control" id="Textarea" value={text} onChange={handleOnChange} rows="15"></textarea>
-            <button className="btn btn-primary mt-3" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary mt-3 mx-3" onClick={handleLoClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary mt-3 mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className="btn btn-primary mt-3 mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary mt-3 mx-2" onClick={handleMemeClick}>Convert to MemeCase</button>
         </div>
         <div className="container my-3">
             <h4>Your Text Summary: </h4>
