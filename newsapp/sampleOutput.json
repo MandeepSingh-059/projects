@@ -1,0 +1,266 @@
+{
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+        {
+            "source": {
+                "id": "fox-news",
+                "name": "Fox News"
+            },
+            "author": "Houston Keene",
+            "title": "Biden's clashes with own experts over COVID booster shots undermine promise to 'follow the science' - Fox News",
+            "description": "President Biden is seeing two of his higher-ups at the Food and Drug Administration (FDA) quit their jobs over his administration’s hasty push for COVID-19 booster vaccines as delta variant cases increase around the US.",
+            "url": "https://www.foxnews.com/politics/biden-covid-booster-shots-experts-follow-science",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2021/06/Biden-G7-AP-5.jpg",
+            "publishedAt": "2021-09-14T17:44:03Z",
+            "content": "Clashes between President Biden's White House and the administration's own experts over COVID-19 booster shots are threatening to undermine a key Biden campaign promise: that he would always \"follow … [+3688 chars]"
+        },
+        {
+            "source": {
+                "id": "cbs-news",
+                "name": "CBS News"
+            },
+            "author": "Li Li",
+            "title": "Florida Governor Ron DeSantis threatens to fine government agencies \"millions\" for requiring employee vaccinations - CBS News",
+            "description": "At a press conference filled with false information related to how COVID vaccines work, DeSantis threatened to fine local governments $5,000 for every employee they require to be vaccinated.",
+            "url": "https://www.cbsnews.com/news/desantis-florida-fines-covid-vaccine-mandates/",
+            "urlToImage": "https://cbsnews3.cbsistatic.com/hub/i/r/2021/07/03/107f07e1-3f0d-49f9-b455-7e24c0e6a0e8/thumbnail/1200x630g4/257746e461afd275d88c3cb3cb87ee58/gettyimages-1231882705.jpg",
+            "publishedAt": "2021-09-14T17:35:34Z",
+            "content": "Florida Governor Ron DeSantis said Monday that in an effort to \"stand up for freedom,\" the state will be fining any local government that requires their employees to be vaccinated against COVID-19. \r… [+3787 chars]"
+        },
+        {
+            "source": {
+                "id": "the-verge",
+                "name": "The Verge"
+            },
+            "author": "Alex Cranz",
+            "title": "The Apple Watch Series 7 is here and has a brand new look - The Verge",
+            "description": "Apple announced the Watch Series 7 during a video event. The new Watch is a little larger than its predecessors and contains a few significant sensor improvements — but it has a whole new look.",
+            "url": "https://www.theverge.com/2021/9/14/22667395/apple-watch-series-7-price-specs-redesign-announcement",
+            "urlToImage": "https://cdn.vox-cdn.com/thumbor/Mx-lEMmNYTIvVbw2oXHZLvg_4wU=/0x15:893x483/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22850146/Capto_Capture_2021_09_14_01_24_25_PM.jpg",
+            "publishedAt": "2021-09-14T17:26:16Z",
+            "content": "The latest Apple Watch is a little bigger, too\r\nImage: Apple\r\nThe Apple Watch Series 7 looks a little different than its predecessors. The display now goes virtually to the edge of the case. That mea… [+2586 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Apple Newsroom"
+            },
+            "author": null,
+            "title": "Apple's most popular iPad delivers even more performance and advanced features - Apple Newsroom",
+            "description": "The new iPad (9th generation) features A13 Bionic, packing even more performance while retaining its all-day battery life and incredible value.",
+            "url": "https://www.apple.com/newsroom/2021/09/apples-most-popular-ipad-delivers-even-more-performance-and-advanced-features/",
+            "urlToImage": "https://www.apple.com/newsroom/images/product/ipad/standard/Apple_iPad-10-2-inch_Ninth-Gen_09142021.jpg.og.jpg?202109141849",
+            "publishedAt": "2021-09-14T17:26:05Z",
+            "content": "September 14, 2021\r\nPRESS RELEASE\r\nApples most popular iPad delivers even more performance and advanced features \r\nThe 10.2-inch iPad features A13 Bionic, Center Stage, True Tone, and now starts with… [+9476 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Kate Dore, CFP®",
+            "title": "House Democrats push for permanent earned income tax credit expansion - CNBC",
+            "description": "House Democrats have called for making the expansion of the earned income tax credit permanent, providing a boost to 17 million Americans, policy experts say.",
+            "url": "https://www.cnbc.com/2021/09/14/house-democrats-push-for-permanent-earned-income-tax-credit-expansion.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106839293-1613058802486-gettyimages-1231102203-AFP_92R4KH.jpeg?v=1613058862",
+            "publishedAt": "2021-09-14T17:24:28Z",
+            "content": "President Joe Biden speaks alongside US Vice President Kamala Harris (3rd L), as he holds a meeting with US Senators, including Ben Cardin (L), Democrat of Maryland, Jim Inhofe (2nd L), Republican of… [+2990 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "247Sports"
+            },
+            "author": "Brad Crawford",
+            "title": "Penn State football: James Franklin addresses USC Trojans coaching search speculation - 247Sports",
+            "description": "...",
+            "url": "https://247sports.com/Article/Penn-State-football-James-Franklin-addresses-USC-Trojans-coaching-search-speculation-170953398/",
+            "urlToImage": "https://s3media.247sports.com/Uploads/Assets/791/590/10590791.jpeg?fit=bounds&crop=1200:630,offset-y0.50&width=1200&height=630",
+            "publishedAt": "2021-09-14T16:53:25Z",
+            "content": "Penn State coach James Franklin is one of several hot-list names to emerge on several USC coaching candidates lists following the Trojans' Monday firing of coach Clay Helton, but the leader of the Ni… [+2346 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Fox Business"
+            },
+            "author": "Associated Press",
+            "title": "51 SpaceX satellites launched into orbit from California - Fox Business",
+            "description": "SpaceX launched 51 Starlink satellites from Vandenberg Space Force Base in California",
+            "url": "https://www.foxbusiness.com/technology/51-spacex-satellites-orbit-california",
+            "urlToImage": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/02/0/0/Satellite-iStock.jpg?ve=1&tl=1",
+            "publishedAt": "2021-09-14T16:02:23Z",
+            "content": "SpaceX launched 51 Starlink satellites into orbit from California on Monday night.\r\nA Falcon 9 rocket lifted off from Vandenberg Space Force Base at 8:55 p.m. and deployed the satellites, which was c… [+539 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Gregory Lemos, CNN",
+            "title": "Florida mother reunited with daughter who was abducted in 2007 at the age of 6 - CNN",
+            "description": "The Clermont Police Department in Florida announced Monday that a mother has been reunited with her daughter, who was just 6 years old when she was abducted from her home in 2007.",
+            "url": "https://www.cnn.com/2021/09/14/us/florida-mother-reunited-abducted-daughter/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/210914112425-florida-mother-reunited-abducted-daughter-super-tease.jpg",
+            "publishedAt": "2021-09-14T15:59:00Z",
+            "content": null
+        },
+        {
+            "source": {
+                "id": "axios",
+                "name": "Axios"
+            },
+            "author": "Zachary Basu",
+            "title": "Top Democrat threatens to subpoena Biden officials as Blinken testifies on Afghanistan - Axios",
+            "description": "\"The execution of the U.S. withdrawal was clearly and fatally flawed,\" Menendez said.",
+            "url": "https://www.axios.com/blinken-senate-testimony-afghanistan-f49c16e1-7093-49ab-8c47-af4e9dee8789.html",
+            "urlToImage": "https://images.axios.com/gFT3nHO2WM9J6AxGaV1VsgP20ps=/0x820:7867x5245/1366x768/2021/09/14/1631631900936.jpg",
+            "publishedAt": "2021-09-14T15:56:55Z",
+            "content": "Secretary of State Antony Blinken is testifying Tuesday before the Senate Foreign Relations Committee, where he'll face a second day of interrogation from Republican lawmakers highly critical of the … [+4448 chars]"
+        },
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Jamie Gangel, Jeremy Herb and Elizabeth Stuart, CNN",
+            "title": "Woodward book: Worried Trump could 'go rogue,' Milley took top-secret action to protect nuclear weapons - CNN",
+            "description": "Two days after the January 6 attack on the US Capitol, President Donald Trump's top military adviser, Joint Chiefs Chairman Gen. Mark Milley, single-handedly took top-secret action to limit Trump from potentially ordering a dangerous military strike or launch…",
+            "url": "https://www.cnn.com/2021/09/14/politics/woodward-book-trump-nuclear/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/200110164718-04-milley-file-2019-super-tease.jpg",
+            "publishedAt": "2021-09-14T15:53:00Z",
+            "content": "The story below contains explicit language\r\nWashington (CNN)Two days after the January 6 attack on the US Capitol, President Donald Trump's top military adviser, Joint Chiefs Chairman Gen. Mark Mille… [+14160 chars]"
+        },
+        {
+            "source": {
+                "id": "nbc-news",
+                "name": "NBC News"
+            },
+            "author": "Elisha Fieldstadt, The Associated Press",
+            "title": "500,000 without power in Texas as Tropical Storm Nicholas churns slowly across state - NBC News",
+            "description": "More than half a million customers in Texas were without power Tuesday after Tropical Storm Nicholas made landfall there and headed for Louisiana.",
+            "url": "https://www.nbcnews.com/news/weather/500-000-without-power-texas-tropical-storm-nicholas-churns-slowly-n1279136",
+            "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2021_37/3505734/210914-storm-nicholas-1-ew-236p.jpg",
+            "publishedAt": "2021-09-14T15:45:00Z",
+            "content": "More than half a million customers in Texas were without power Tuesday after Tropical Storm Nicholas made landfall there, threatening parts of the Gulf Coast with up to 20 inches of rain.\r\nNicholas s… [+3173 chars]"
+        },
+        {
+            "source": {
+                "id": "ars-technica",
+                "name": "Ars Technica"
+            },
+            "author": "Ax Sharma",
+            "title": "Apple patches “FORCEDENTRY” zero-day exploited by Pegasus spyware - Ars Technica",
+            "description": "Zero-click flaw has been exploited by NSO since at least February 2021.",
+            "url": "https://arstechnica.com/information-technology/2021/09/apple-fixes-imessage-zero-day-exploited-by-pegasus-spyware/",
+            "urlToImage": "https://cdn.arstechnica.net/wp-content/uploads/2021/09/apple-keyway-760x380.jpg",
+            "publishedAt": "2021-09-14T15:44:22Z",
+            "content": "26 with 22 posters participating\r\nApple has released several security updates this week to patch a \"FORCEDENTRY\" vulnerability on iOS devices. The \"zero-click, zero-day\" vulnerability has been active… [+3836 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "MacRumors"
+            },
+            "author": "MacRumors Staff",
+            "title": "Apple Event Live Updates: iPhone 13, Apple Watch Series 7, and More Expected - MacRumors",
+            "description": "Apple's virtual \"California Streaming\" event kicks off today at 10:00 a.m. Pacific Time, with Apple expected to introduce the iPhone 13,...",
+            "url": "https://www.macrumors.com/2021/09/14/apple-event-live-coverage-september-2021/",
+            "urlToImage": "https://images.macrumors.com/t/rGKY1D1YwLAR_ijz41YhEQigFME=/2500x/https://images.macrumors.com/article-new/2021/09/9.14.21-live-coverage-but-its-too-late.jpg",
+            "publishedAt": "2021-09-14T15:30:24Z",
+            "content": "Apple's virtual \"California Streaming\" event kicks off today at 10:00 a.m. Pacific Time, with Apple expected to introduce the iPhone 13, Apple Watch Series 7, and perhaps the third-generation AirPods… [+13996 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "New York Post"
+            },
+            "author": "Emily Crane",
+            "title": "Nicki Minaj slams MSNBC's Joy Reid in COVID vaccine firestorm - New York Post ",
+            "description": "Nicki Minaj is unleashing on MSNBC’s Joy Reid for being “so thirsty to down another black woman,” after the TV host lectured the rapper for her COVID-19 vaccine skepticism.",
+            "url": "https://nypost.com/2021/09/14/nicki-minaj-and-msnbcs-joy-reid-feud-over-covid-19-vaccine/",
+            "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2021/09/nicki-minaj-joy-reid-hp.jpg?quality=90&strip=all&w=1024",
+            "publishedAt": "2021-09-14T15:21:00Z",
+            "content": "Nicki Minaj is unleashing on MSNBC’s Joy Reid for being so thirsty to down another black woman, after the TV host lectured the rapper for her COVID-19 vaccine skepticism.\r\nMinaj’s expletive-laden ran… [+3427 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Yahoo Entertainment"
+            },
+            "author": "Helen Briggs - Science and environment correspondent",
+            "title": "Asteroid that wiped out dinosaurs shaped fortunes of snakes - Yahoo News",
+            "description": "Snakes owe their success in part to the asteroid impact that killed off the dinosaurs 66 million years ago.",
+            "url": "https://news.yahoo.com/asteroid-wiped-dinosaurs-shaped-fortunes-151417394.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/rva5kql.OVz8w92S6fQMzA--~B/aD01NDk7dz05NzY7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/bbc_us_articles_995/c3a03a597c1e6468b8f8b3e9fcf71083",
+            "publishedAt": "2021-09-14T15:14:17Z",
+            "content": "Snakes have adapted to life on every continent save Antarctica\r\nSnakes owe their success in part to the asteroid strike that wiped out the dinosaurs, according to a new study.\r\nThe impact caused deva… [+3413 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "ESPN"
+            },
+            "author": "David Purdum",
+            "title": "Las Vegas Raiders' upset caps record week for NFL underdogs - ESPN",
+            "description": "Twelve underdogs covered the spread, the most in Week 1 in the Super Bowl era. The nine underdogs that pulled outright upsets in Week 1 was the most in any week in the past four seasons.",
+            "url": "https://www.espn.com/chalk/story/_/id/32207816/las-vegas-raiders-upset-caps-record-week-nfl-underdogs",
+            "urlToImage": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2021%2F0914%2Fr908811_1296x729_16%2D9.jpg",
+            "publishedAt": "2021-09-14T15:04:22Z",
+            "content": "The Las Vegas Raiders' upset of the Baltimore Ravens in overtime on Monday Night Football capped a historic week for NFL underdogs.\r\nTwelve underdogs covered the spread, the most in Week 1 in the Sup… [+1864 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Deadline"
+            },
+            "author": "Mike Fleming Jr",
+            "title": "Christopher Nolan Chooses Universal Pictures For His Film About J. Robert Oppenheimer & The A-Bomb - Deadline",
+            "description": "EXCLUSIVE: Universal Pictures has landed the right to finance and distribute the next film that Christopher Nolan will direct, based on his script about J. Robert Oppenheimer and his role in the development of the atom bomb. A theoretical physicist who became…",
+            "url": "https://deadline.com/2021/09/christopher-nolan-universal-pictures-sets-next-film-j-robert-oppenheimer-development-atom-bomb-world-war-two-1234832975/",
+            "urlToImage": "https://deadline.com/wp-content/uploads/2021/09/Christopher-Nolan-Universal.jpg?w=1000",
+            "publishedAt": "2021-09-14T15:00:00Z",
+            "content": "EXCLUSIVE: Universal Pictures has landed the right to finance and distribute the next film that Christopher Nolan will direct, based on his script about J. Robert Oppenheimer and his role in the deve… [+5286 chars]"
+        },
+        {
+            "source": {
+                "id": "fox-news",
+                "name": "Fox News"
+            },
+            "author": "Fox News Staff",
+            "title": "Concha on White House cutting Biden's live feed mid-sentence: 'Appears intentional' and it looks weak - Fox News",
+            "description": "Fox News contributor Joe Concha reacted Tuesday to The White House abruptly cutting the feed of President Biden's briefing on wildfires with federal and state officials in Boise, Idaho.",
+            "url": "https://www.foxnews.com/media/white-house-cutting-biden-feed-questions-concha",
+            "urlToImage": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/694940094001/8dc3f28f-0330-4182-90e3-c64dbefd8856/127e06e1-e41b-4a89-b66d-039b0868c19a/1280x720/match/image.jpg",
+            "publishedAt": "2021-09-14T14:51:30Z",
+            "content": "Fox News contributor Joe Concha reacted Tuesday to the White House\r\n abruptly cutting the feed of President Biden\r\n's briefing on wildfires with federal and state officials in Boise, Idaho. The video… [+815 chars]"
+        },
+        {
+            "source": {
+                "id": "associated-press",
+                "name": "Associated Press"
+            },
+            "author": "Nicole Winfield",
+            "title": "Pope visit a sign of inclusion for Slovakia's excluded Roma - Associated Press",
+            "description": "KOSICE, Slovakia (AP) — Pope Francis on Tuesday urged Slovakia’s Roma to integrate better into the mainstream as he ministered to the country’s most socially excluded minority group who have long suffered discrimination, marginalization and poverty.",
+            "url": "https://apnews.com/article/europe-health-religion-coronavirus-pandemic-pope-francis-85182c6625fd2b95e4d83f9f4167cf8b",
+            "urlToImage": "https://storage.googleapis.com/afs-prod/media/e9d2f69ad9a9484cab8cc16dbcfafd76/3000.jpeg",
+            "publishedAt": "2021-09-14T14:48:45Z",
+            "content": "KOSICE, Slovakia (AP) Pope Francis on Tuesday urged Slovakias Roma to integrate better into the mainstream as he ministered to the countrys most socially excluded minority group who have long suffere… [+6523 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "chiefs.com"
+            },
+            "author": null,
+            "title": "Power Rankings Week 1 | Where do the Chiefs Rank After Sunday's Win Over the Browns? - chiefs.com",
+            "description": "Here’s a look at the latest “NFL power rankings” from around the web",
+            "url": "https://www.chiefs.com/news/power-rankings-week-1-where-do-the-chiefs-rank-after-sunday-s-win-over-the-brown",
+            "urlToImage": "https://static.clubs.nfl.com/image/private/t_editorial_landscape_12_desktop/chiefs/hyb8ufly8eey82zaxs63",
+            "publishedAt": "2021-09-14T14:29:04Z",
+            "content": "The Kansas City Chiefs kicked off the 2021 campaign with a thrilling victory on Sunday, completing a 12-point comeback to defeat the Cleveland Browns at GEHA Field at Arrowhead Stadium.\r\nThe victory … [+665 chars]"
+        }
+    ]
+}
