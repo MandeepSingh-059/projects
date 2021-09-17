@@ -17,7 +17,7 @@ export class NavBar extends Component {
         
         return (
             <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color="dark" dark expand="md">
                     <NavbarBrand href="/">NewsFill</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
