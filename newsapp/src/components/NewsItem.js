@@ -12,7 +12,7 @@ export class NewsItem extends Component {
         return (
             <div className="my-3">
                 <Card style={{maxWidth : "100%"}}>
-                    <CardImg top src={imageUrl ? imageUrl : "./logo192.png"} alt="Couldnt fetch Article image" />
+                    <CardImg top src={imageUrl ? imageUrl : "./loading.gif"} alt="Article image not available" />
                     <CardBody>
                         <CardTitle tag="h5">{title}{`${title.length<70 ? "":"..."}`}</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">{`${author!=null ? "By-":""}`}{author}</CardSubtitle>
