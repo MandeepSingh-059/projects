@@ -8,9 +8,12 @@ import {
     NavItem,
     NavLink
   } from 'reactstrap';
+  import {
+    NavLink as RRNavLink
+  } from "react-router-dom";
 
 export class NavBar extends Component {
-    
+
     constructor(){
         super();
         this.state = {
@@ -31,43 +34,42 @@ export class NavBar extends Component {
         }
     }
 
-    render() {        
+    render() {
         return (
-            <div>
+            <div >
                 <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href="/">NewsFill</NavbarBrand>
+                <div className="container-fluid">
+                    <NavbarBrand tag={RRNavLink} exact to="/">NewsFill</NavbarBrand>
                     <NavbarToggler onClick={this.handleToggle} />
                     <Collapse isOpen={this.state.isOpenVal} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
-                                <NavLink href="/">Home</NavLink>
+                                <NavLink tag={RRNavLink} exact to="/">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/about">About</NavLink>
+                                <NavLink tag={RRNavLink} to="/business">Business</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/">Business</NavLink>
+                                <NavLink tag={RRNavLink} to="/entertainment">Entertainment</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/">Entertainment</NavLink>
+                                <NavLink tag={RRNavLink} to="/general">General</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/">General</NavLink>
+                                <NavLink tag={RRNavLink} to="/health">Health</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/">Health</NavLink>
+                                <NavLink tag={RRNavLink} to="/science">Science</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/">Science</NavLink>
+                                <NavLink tag={RRNavLink} to="/sports">Sports</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/">Sports</NavLink>
+                                <NavLink tag={RRNavLink} to="/technology">Tech</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink href="/">Tech</NavLink>
-                            </NavItem>
-                        </Nav>
+                        </Nav>                             
                     </Collapse>
+                </div>
                 </Navbar>
             </div>
         )
