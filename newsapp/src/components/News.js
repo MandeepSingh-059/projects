@@ -19,13 +19,14 @@ export class News extends Component {
         category: PropTypes.string
     }
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             articles : [],
             loading : false,
             page: 1
         }
+        document.title = `${this.props.category.toUpperCase()} - NewsFill`;
     }
 
     /*
@@ -40,8 +41,8 @@ export class News extends Component {
         else{return false;}
     }
     
-    async componentDidMount(){
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ac61e477a31f4607b6b6b46ece505d9e&category=${this.props.category}&page=1&pageSize=${this.props.pageSize}`;
+    async updateNews(){
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ac61e477a31f4607b6b6b46ece505d9e&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         this.setState({loading: true});
         let data = await fetch(url);        
         let parsedData = await data.json();
@@ -50,40 +51,31 @@ export class News extends Component {
                         loading: false});
     }
 
+    async componentDidMount(){
+        this.updateNews();
+    }
     handleNextClick = async () =>{
-        if(!this.disableNext()){
-            let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ac61e477a31f4607b6b6b46ece505d9e&category=${this.props.category}&page=${this.state.page + 1}&category=${this.props.category}&pageSize=${this.props.pageSize}`;
-            this.setState({loading: true});
-            let data = await fetch(url);        
-            let parsedData = await data.json();
-            this.setState({
-                page: this.state.page + 1,
-                articles: parsedData.articles,
-                loading: false
-            })
-        }
+        this.setState({
+            page: this.state.page + 1
+        });
+        this.updateNews();
     }
     handlePrevClick = async () =>{
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=ac61e477a31f4607b6b6b46ece505d9e&category=${this.props.category}&page=${this.state.page - 1}&category=${this.props.category}&pageSize=${this.props.pageSize}`;
-        this.setState({loading: true});
-        let data = await fetch(url);        
-        let parsedData = await data.json();
         this.setState({
-            page: this.state.page - 1,
-            articles: parsedData.articles,
-            loading: false
-        })
+            page: this.state.page - 1
+        });
+        this.updateNews();
     }
     
     render() {
         return (
             <div className="container my-3">
-                <h2 className="text-center" style={{margin:"30px 0px"}}>NewsFill - Top Headlines</h2>
+                <h2 className="text-center" style={{margin:"30px 0px"}}>NewsFill - Top Headlines in {`${this.props.category}`}</h2>
                 {this.state.loading && <Spinner />}
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div key={element.url} className="col-md-4">
-                            <NewsItem title={element==null?"":element.title.slice(0, 70)} description={element==null?"":element.title.slice(0, 200)} author={element.author} imageUrl={element.urlToImage} newsUrl={element.url}/>
+                            <NewsItem title={element==null?"":element.title.slice(0, 70)} description={element==null?"":element.title.slice(0, 200)} author={element.author} date={element.publishedAt} imageUrl={element.urlToImage} newsUrl={element.url} source={element.source.name} />
                         </div>         
                     })}
 
