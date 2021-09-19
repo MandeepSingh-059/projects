@@ -13,7 +13,7 @@ export class NewsItem extends Component {
         return (
             <div className="my-3">
                 <Card style={{ maxWidth: "100%" }}>
-                    <a href={newsUrl} target="_blank" rel="noreferrer">
+                    <a href={newsUrl} target="_blank"  rel="noreferrer">
                         <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style={{ zIndex: "1" }} >{source}</span>
                     </a>
                     <CardImg top src={imageUrl ? imageUrl : "./loading.gif"} alt="Article image not available" />
