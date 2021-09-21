@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle
 } from 'reactstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 //   https://newsapi.org/v2/top-headlines?country=us&apiKey=ac61e477a31f4607b6b6b46ece505d9e&pagesize=6
-export class NewsItem extends Component {
+const NewsItem = (props) => {
 
-    render() {
-        let { title, description, author, imageUrl, newsUrl, date, source } = this.props;
+        let { title, description, author, imageUrl, newsUrl, date, source } = props;
 
         return (
             <div className="my-3">
@@ -32,7 +31,6 @@ export class NewsItem extends Component {
                 </Card>
             </div>
         )
-    }
 }
 
 export default NewsItem

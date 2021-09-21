@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Collapse,
     Navbar,
@@ -7,41 +7,33 @@ import {
     Nav,
     NavItem,
     NavLink
-  } from 'reactstrap';
-  import {
+} from 'reactstrap';
+
+import {
     NavLink as RRNavLink
-  } from "react-router-dom";
+} from "react-router-dom";
 
-export class NavBar extends Component {
+const NavBar = () => {
 
-    constructor(){
-        super();
-        this.state = {
-            isOpenVal: false
+    let isOpenVal = false;
+
+    const handleToggle = () => {
+        if (this.state.isOpenVal === false) {
+            isOpenVal = true
+        }
+        else {
+            isOpenVal = false
         }
     }
 
-    handleToggle = () => {
-        if(this.state.isOpenVal === false){
-            this.setState({
-                isOpenVal: true
-            })
-        }
-        else{
-            this.setState({
-                isOpenVal: false
-            })
-        }
-    }
 
-    render() {
-        return (
-            <div >
-                <Navbar color="dark" dark expand="md" >
+    return (
+        <div >
+            <Navbar color="dark" fixed-top dark expand="md" >
                 <div className="container-fluid">
                     <NavbarBrand tag={RRNavLink} exact to="/">NewsFill</NavbarBrand>
-                    <NavbarToggler onClick={this.handleToggle} />
-                    <Collapse isOpen={this.state.isOpenVal} navbar>
+                    <NavbarToggler onClick={handleToggle} />
+                    <Collapse isOpen={isOpenVal} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem><NavLink tag={RRNavLink} exact to="/">Home</NavLink></NavItem>
                             <NavItem><NavLink tag={RRNavLink} to="/business">Business</NavLink></NavItem>
@@ -51,13 +43,12 @@ export class NavBar extends Component {
                             <NavItem><NavLink tag={RRNavLink} to="/science">Science</NavLink></NavItem>
                             <NavItem><NavLink tag={RRNavLink} to="/sports">Sports</NavLink></NavItem>
                             <NavItem><NavLink tag={RRNavLink} to="/technology">Tech</NavLink></NavItem>
-                        </Nav>                             
+                        </Nav>
                     </Collapse>
                 </div>
-                </Navbar>
-            </div>
-        )
-    }
+            </Navbar>
+        </div>
+    )
 }
 
 export default NavBar
