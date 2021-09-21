@@ -11,29 +11,10 @@ const News = (props) => {
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
 
-    // document.title = `${props.category.toUpperCase()} - NewsFill`;
 
-
-    // const updateNews = async() => {
-        
-    //     props.setProgress(10);
-        
-    //     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
-
-    //     setLoading(true);
-
-    //     let data = await fetch(url);
-    //     let parsedData = await data.json()
-        
-    //     props.setProgress(50);
-
-    //     setArticles(parsedData.articles);
-    //     setLoading(false);
-    //     setTotalResults(parsedData.totalResults);
-        
-    //     props.setProgress(100);
-
-    // }
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    } 
 
 
     const updateNews = async ()=> {
@@ -54,6 +35,7 @@ const News = (props) => {
 
 
     useEffect(() => {
+        document.title = `${capitalizeFirstLetter(props.category)} - NewsFill`;
         updateNews(); 
         // eslint-disable-next-line
     }, [])
