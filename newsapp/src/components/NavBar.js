@@ -37,7 +37,7 @@ export class NavBar extends Component {
     render() {
         return (
             <div >
-                <Navbar color="dark" dark expand="md">
+                <Navbar color="dark" dark expand="md" >
                 <div className="container-fluid">
                     <NavbarBrand tag={RRNavLink} exact to="/">NewsFill</NavbarBrand>
                     <NavbarToggler onClick={this.handleToggle} />

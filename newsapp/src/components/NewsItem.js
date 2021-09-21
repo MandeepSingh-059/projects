@@ -12,11 +12,11 @@ export class NewsItem extends Component {
 
         return (
             <div className="my-3">
-                <Card style={{ maxWidth: "100%" }}>
+                <Card style={{ maxWidth: "100%", minHeight: "30rem", marginBottom: "5rem"}}>
                     <a href={newsUrl} target="_blank"  rel="noreferrer">
-                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style={{ zIndex: "1" }} >{source}</span>
+                        <span className="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style={{ zIndex: "1" }} >{source}</span>
                     </a>
-                    <CardImg top src={imageUrl ? imageUrl : "./loading.gif"} alt="Article image not available" />
+                    <CardImg top src={imageUrl ? imageUrl : "./notFound.jpg"} alt="Article image not available" />
                     <CardBody>
                         <CardTitle tag="h5">
                             {title}{`${title.length < 70 ? "" : "..."}`}
@@ -27,7 +27,7 @@ export class NewsItem extends Component {
                             {`${date != null ? new Date(date).toGMTString() : ""}`}
                         </CardSubtitle>
                         <CardText>{description}{`${description.length < 150 ? "" : "..."}`}</CardText>
-                        <a className="btn btn-outline-success btn-sm" href={newsUrl} target="_blank" rel="noreferrer">Read More</a>
+                        <a className="btn btn-outline-success btn-sm" href={newsUrl} target="_blank" rel="noreferrer" style={{width:"100%"}}>Read More</a>
                     </CardBody>
                 </Card>
             </div>
