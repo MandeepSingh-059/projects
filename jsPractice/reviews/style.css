@@ -1,0 +1,44 @@
+*{
+    box-sizing: "border-box";
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background-color: aqua;
+    }
+    #title{
+      text-align: center;   
+      margin-top: 1rem;
+    }
+    
+    div{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,0);
+      text-align: center;
+    }
+    
+    #ruler{
+       width: 2rem;
+       height: 0.25rem;
+       background-color: blue;
+       border-radius: 2px;
+    }
+    
+    .container{
+      top:50%;
+      transform: translate(-50%, -50%);
+    }
+    .container * {
+      margin: 2px;
+    }
+    
+    button{
+      all:unset;
+      border: 1px solid black;
+    }
+    #left, #right{
+      width: 10px;
+      height: 20px; 
+    }
+    #random{
+    }
