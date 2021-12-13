@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+  }
+  
+  body {
+    background-color: teal;
+  }
+  
+  .modal {
+    background-color: white;
+    text-align: center;
+    height: 6.5rem;
+    width: 25rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .modal * {
+    margin: 0.5rem 0;
+  }
+  
+  #modalButton {
+    background-color: blue;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+  }
+  
+  .modalDes {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    text-align: center;
+    width: 25rem;
+    min-height: 6rem;
+    border-radius: 0.5rem;
+  }
+  
+  #modalDesBtn {
+    background-color: blue;
+    border: none;
+    border-radius: 0;
+    visibility: inherit;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(-200%, 0);
+  }

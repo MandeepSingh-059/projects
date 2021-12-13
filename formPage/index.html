@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header id="header">
+        <h1 >Survey Form</h1>
+        <p>Thank you for taking the time to help us improve</p>
+    </header>
+    <div class="container">
+        <form>
+            <label for="name" id="nameLabel">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your Name">
+        
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter your Email">
+
+            <label for="age">Age (optional)</label>
+            <input type="text" placeholder="Age">
+
+            <p>Which option describes your current role</p>
+            <select name="role" id="role">
+                
+                <option value="#">Select Current Role</option>
+                <option value="student">Student</option>
+                <option value="">Full Time Job</option>
+                <option value="FTLearner">Full Time Learner</option>
+                <option value="noSay">Prefer not to say</option>
+                <option value="other">Other</option>
+
+            </select>
+
+      
+        <label >
+            <input type="radio" name="choice" id="definitely" value="definitely">Definitely
+        </label>
+
+        <label >
+            <input type="radio" name="choice" id="Maybe" value="Maybe">Maybe
+        </label>
+
+        <label >
+            <input type="radio" name="choice" id="notSure" value="notSure">
+            Not Sure
+        </label>
+
+
+            <p>What is your favourite feature of freeCodeCamp?</p>
+            <select name="feature" id="feature">
+                <option value="#">Select an Option</option>
+                <option value="challenges">Challenges</option>
+                <option value="projects">projects</option>
+                <option value="community">community</option>
+            </select>
+
+            <p>What would you like to see improved? (check all that apply)</p>
+
+            <label>
+                <input type="checkbox" name="improve" id="feProjects">
+                Front-end Projects
+            </label>
+            <label>
+                <input type="checkbox" name="improve" id="beProjects">
+                Back-end Projects
+            </label>
+            <label>
+                <input type="checkbox" name="improve" id="dataVisualization">
+                Data Visualization
+            </label>
+            <label>
+                <input type="checkbox" name="improve" id="challenges">
+                Challenges
+            </label>
+
+
+            <p>Any comments or Suggestions?</p>
+            <textarea name="suggestions" id="suggestions" cols="30" rows="10" placeholder="Enter your comments here..."></textarea>
+            
+            <input type="submit" id="submit">
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    width: 190px;
+    height: 190px;
+}
+
+.grid{
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;/*justify-self/justify-items not implemented in flexbox sp we ise justify-content*/
+    align-content: center;
+    width: 580px;
+    height: 580px;
+}
+
+.mole{
+    background-image: url('./mole.png');
+    background-size: cover;
+}
+
+
+/*Styling*/
+
+html{
+    background-color: black;
+    font-family: monospace;
+    color: rgb(26, 219, 26);
+}
+
+body{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.grid{
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.tile{
+
+    background-color: rgb(168, 66, 18);
+    margin: 1px;
+    border: 1px solid blue;
+    border-radius: 30px;
+}
+
+#title p{
+    font-size: 2rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 94%;
+    transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 630px){
+    .grid{
+        width: 310px;
+        height: 310px;
+    }
+    .square{
+        width: 100px;
+        height: 100px;
+    }
+
+    #title p{
+        top: 75%;
+    }
+}
