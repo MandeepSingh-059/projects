@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Show Alert</button>
+</body>
+<script>
+    function displayMessage(msgText, msgType) {
+
+const html = document.querySelector('html');
+
+const panel = document.createElement('div');
+panel.setAttribute('class', 'msgBox');
+html.appendChild(panel);
+
+const msg = document.createElement('p');
+msg.textContent = msgText;
+panel.appendChild(msg);
+
+const closeBtn = document.createElement('button');
+closeBtn.textContent = 'x';
+panel.appendChild(closeBtn);
+
+        closeBtn.addEventListener('click', () => panel.parentNode.removeChild(panel));
+
+        msg.style.width = "242px";
+        if (msgType == "Warning") {
+            msg.style.backgroundColor = "red";
+        }
+
+    }
+
+    const btn = document.querySelector('button');
+
+    btn.addEventListener('click', () => displayMessage('Woo, this is a different message!', "Warning"));
+
+</script>
+</html>
