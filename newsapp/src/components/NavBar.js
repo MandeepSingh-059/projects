@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     Collapse,
     Navbar,
@@ -15,23 +15,17 @@ import {
 
 const NavBar = () => {
 
-    let isOpenVal = false;
-
-    const handleToggle = () => {
-        if (this.state.isOpenVal === false) {
-            isOpenVal = true
-        }
-        else {
-            isOpenVal = false
-        }
+    const [isOpenVal, setIsOpenVal] = useState(false);
+    
+    const handleToggle = ()=> {
+        setIsOpenVal(!isOpenVal);
     }
-
 
     return (
         <div >
             <Navbar color="dark" fixed-top dark expand="md" >
-                <div className="container-fluid">
-                    <NavbarBrand tag={RRNavLink} exact to="/">NewsFill</NavbarBrand>
+                <div className="container-fluid ">
+                    <NavbarBrand className="Brand" tag={RRNavLink} exact to="/">NewsFill</NavbarBrand>
                     <NavbarToggler onClick={handleToggle} />
                     <Collapse isOpen={isOpenVal} navbar>
                         <Nav className="mr-auto" navbar>
