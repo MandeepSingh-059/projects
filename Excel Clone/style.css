@@ -59,7 +59,6 @@ body{
 
 
 /* MENU ICON BAR */
-
 .menu-icon-bar{
     height: 4vh;
     background-color: rgb(241, 241, 241);
@@ -91,36 +90,6 @@ body{
 }
 
 
-
-/* DATA CONTAINER BAR */
-.data-container{
-    height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
-}
-.select-all{
-    height: 30px;
-    width: 30px;
-    border: 1px solid lightgray;
-}
-.row-name-container{
-    height: calc(80vh - 30px);
-    width: 30px;
-    border: 1px solid lightgray;
-}
-.column-name-container{
-    height: 30px;
-    width: calc(100vw - 30px);
-    border: 1px solid lightgray;
-}
-.input-cell-container{
-    height: calc(80vh - 30px);
-    width: calc(100vw - 30px);
-    border: 1px solid lightgray;
-}
-
-
-
 /* SHEET BAR */
 .sheet-bar{
     height: 4vh;
@@ -148,7 +117,7 @@ body{
 }
 
 .sheet-tab-container{
-    border: 1px solid red;
+    border: 1px solid lightgray;
     width: calc(100vw - 200px);
 }
 .sheet-tab{
@@ -164,4 +133,35 @@ body{
 }
 .sheet-tab:hover{
     cursor: default;
+}
+
+
+
+
+
+/* DATA CONTAINER BAR */
+.data-container{
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.select-all{
+    height: 30px;
+    width: 30px;
+    border: 1px solid lightgray;
+}
+.row-name-container{
+    height: calc(80vh - 30px);
+    width: 30px;
+    border: 1px solid lightgray;
+}
+.column-name-container{
+    height: 30px;
+    width: calc(100vw - 30px);
+    border: 1px solid lightgray;
+}
+.input-cell-container{
+    height: calc(80vh - 30px);
+    width: calc(100vw - 30px);
+    border: 1px solid lightgray;
 }
