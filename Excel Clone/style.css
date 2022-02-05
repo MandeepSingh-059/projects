@@ -154,6 +154,7 @@ body{
     height: calc(80vh - 30px);
     width: 30px;
     border: 1px solid lightgray;
+    overflow: hidden;
 }
 .column-name-container{
     height: 30px;
@@ -184,7 +185,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4vh;
+    min-height: 4vh;
     border-bottom: 1px solid lightgray;       
 }
 

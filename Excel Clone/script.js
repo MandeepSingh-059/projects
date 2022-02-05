@@ -26,10 +26,23 @@ function createCol(n){
     columnName.setAttribute("class", "column-name");
     columnName.setAttribute("data-colCode",columnName.textContent);
     columnName.setAttribute("data-colId",n);
-        
+
     columnNameContainer.appendChild(columnName);
+}
+
+//Create and add row to the page
+function createRow(n){
+    const columnNameContainer = document.querySelector(".row-name-container");
+    
+    const rowName = document.createElement("div");
+    rowName.textContent = n;
+    rowName.setAttribute("class", "row-name");
+    rowName.setAttribute("data-rowId",n);
+
+    columnNameContainer.appendChild(rowName);
 }
 
 for(let i=1; i <= 20; i++){
     createCol(i);
+    createRow(i);
 }
