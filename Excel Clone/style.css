@@ -87,7 +87,35 @@ body{
 /* FORMULA BAR */
 .formula-bar{
     height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.formula-editor{
+    height: 70%;
+    border: 1px solid lightgray;
+}
+.selected-cell{
+    width: 100px;
+}
+.function-sign{
+    height: 70%;
+    width: 40px;
+}
+.formula-input{
+    width: calc(100vw - 150px);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* SHEET BAR */

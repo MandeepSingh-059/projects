@@ -78,8 +78,8 @@ function populateDataContainer(maxRow, maxCol, inputCellContainer){
 
 
 
-let maxRow = 50;
-let maxCol = 50;
+let maxRow = 10;
+let maxCol = 10;
 const inputCellContainer = document.getElementsByClassName('input-cell-container')[0]; //get 0th element with class name this
 
 populateDataContainer(maxRow, maxCol, inputCellContainer);
