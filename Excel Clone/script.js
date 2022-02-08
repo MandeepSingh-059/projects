@@ -28,6 +28,7 @@ function createCol(n){
     columnName.setAttribute("data-colId",n);
 
     columnNameContainer.appendChild(columnName);
+    return columnName.textContent;
 }
 
 //Create and add row to the page
@@ -40,9 +41,45 @@ function createRow(n){
     rowName.setAttribute("data-rowId",n);
 
     columnNameContainer.appendChild(rowName);
+    return rowName;
 }
 
-for(let i=1; i <= 20; i++){
-    createCol(i);
-    createRow(i);
+//creating the cell
+function createCell(row, col, colCode){
+    const cell = document.createElement("div");
+    cell.setAttribute("class", "input-cell");
+    cell.setAttribute("contenteditable", "true");
+    cell.setAttribute("data-row", row);
+    cell.setAttribute("data-col", col);
+    cell.setAttribute("data-code", colCode);
+    cell.setAttribute("display", "flex");
+    return cell;
 }
+
+//populating the data container
+function populateDataContainer(maxRow, maxCol, inputCellContainer){
+    for(let i=1; i<=maxRow; i++){
+        createRow(i);//this create row is for rows in row name container div
+        const row = document.createElement("div");
+        row.setAttribute("class", "row");
+        row.style.display = "flex";
+    
+        for(let j=1; j<=maxCol; j++){
+            let code;
+            if(i==1){
+               code = createCol(j);
+            }
+            const cell = createCell(i,j, code);
+            row.appendChild(cell);
+        }
+        inputCellContainer.appendChild(row);
+    }
+}
+
+
+
+let maxRow = 50;
+let maxCol = 50;
+const inputCellContainer = document.getElementsByClassName('input-cell-container')[0]; //get 0th element with class name this
+
+populateDataContainer(maxRow, maxCol, inputCellContainer);
