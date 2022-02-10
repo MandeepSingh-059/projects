@@ -64,7 +64,10 @@ body{
     background-color: rgb(241, 241, 241);
     display: flex;
     align-items: center;
-
+}
+.menu-icon-bar *{
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
 }
 .menu-icon{
     padding-left: 10px;
@@ -82,6 +85,19 @@ body{
     font-size: 18px;
 }
 
+.menu-icon.selected{
+    background-color: lightgray;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* FORMULA BAR */
@@ -90,10 +106,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(241, 241, 241);
 }
 .formula-editor{
     height: 70%;
     border: 1px solid lightgray;
+    background-color: #fff;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 .selected-cell{
     width: 100px;
@@ -104,10 +126,8 @@ body{
 }
 .formula-input{
     width: calc(100vw - 150px);
+    outline-color: #107c41;
 }
-
-
-
 
 
 
@@ -229,5 +249,9 @@ body{
     justify-content: center;
     align-items: center;
     border-right: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;       
+    border-bottom: 1px solid lightgray;    
+    outline-color: #107c41;   
+}
+.input-cell.selected{
+    border: 2px solid #107c41;
 }
