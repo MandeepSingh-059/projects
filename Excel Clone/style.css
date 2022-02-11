@@ -208,12 +208,13 @@ body{
     height: 30px;
     width: calc(100vw - 30px);
     border: 1px solid lightgray;
+    overflow: hidden;
 }
 .input-cell-container{
     height: calc(80vh - 30px);
     width: calc(100vw - 30px);
     border: 1px solid lightgray;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 

@@ -105,8 +105,8 @@ function populateDataContainer(maxRow, maxCol, inputCellContainer) {
     }
 }
 
-let maxRow = 10;
-let maxCol = 10;
+let maxRow = 100;
+let maxCol = 100;
 const inputCellContainer = document.getElementsByClassName('input-cell-container')[0]; //get 0th element with class name this
 
 populateDataContainer(maxRow, maxCol, inputCellContainer);
@@ -123,5 +123,21 @@ inputCell.forEach( (cell) => {
         cell.className += " selected";
    
     })
+    
+    //make cell editable on doubleclick
+    cell.addEventListener("dblclick", function (){
 
+        document.querySelector(".input-cell.selected").classList.remove("selected");
+        cell.className += " selected";
+        cell.contentEditable = "true";
+        cell.focus();
+
+    });
+});
+
+inputCellContainer.addEventListener("scroll", function(){
+
+    document.querySelector(".column-name-container").scrollLeft = inputCellContainer.scrollLeft;
+    document.querySelector(".row-name-container").scrollTop = inputCellContainer.scrollTop;
+    
 });
