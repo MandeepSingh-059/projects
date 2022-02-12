@@ -116,8 +116,7 @@ $(document).ready(function (){
         }
     }
     
-    let maxRow = 100;
-    let maxCol = 100;
+    let maxRow = maxCol = 100;
     const inputCellContainer = document.getElementsByClassName('input-cell-container')[0]; //get 0th element with class name this
     
     populateDataContainer(maxRow, maxCol, inputCellContainer);
@@ -178,11 +177,43 @@ $(document).ready(function (){
             cell.focus();
     
         });
+
     });
+
+    //removing contenteditable on focus loss
+    $(".input-cell").blur(function(){
+        $(".input-cell.selected").attr("contenteditable", false);
+    })
     
-    
-    
-    
+    //Adding properties to cells (bold italics etc))
+    function updateCell(property, value){
+        $(".input-cell.selected").each(function(){
+            $(this).css(property, value);  
+        })
+    }
+
+    $(".icon-bold").click(function (){
+        if($(this).hasClass("selected")){
+            updateCell("font-weight", "");
+        }else{  
+            updateCell("font-weight", "bold");
+        }
+    })
+    $(".icon-italic").click(function (){
+        if($(this).hasClass("selected")){
+            updateCell("font-style", "");
+        }else{  
+            updateCell("font-style", "italic");
+        }
+    })
+    $(".icon-underline").click(function (){
+        if($(this).hasClass("selected")){
+            updateCell("text-decoration", "");
+        }else{  
+            updateCell("text-decoration", "underline");
+        }
+    })
+
     
     //Making row and column scroll with input-cell-container
     inputCellContainer.addEventListener("scroll", function () {
