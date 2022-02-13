@@ -23,13 +23,18 @@ let totalSheets = 1;
 $(document).ready(function (){
 
     //Logic for align item buttons
-    const alignIcon = document.querySelectorAll(".align-icon");
-    alignIcon.forEach((icon) => {
-        icon.addEventListener("click", function () {
-            document.querySelector(".align-icon.selected").classList.remove("selected");
-            icon.className += " selected";
-        });
+    // const alignIcon = document.querySelectorAll(".align-icon");
+    // alignIcon.forEach((icon) => {
+    //     icon.addEventListener("click", function () {
+    //         document.querySelector(".align-icon.selected").classList.remove("selected");
+    //         icon.className += " selected";
+    //     });
+    // });
+    $(".align-icon").click(function(){
+        $(".align-icon.selected").removeClass("selected");
+        $(this).addClass("selected");
     });
+    
     
     //Logic for style (italics, bold, undeline) buttons
     const styleIcon = document.querySelectorAll(".style-icon");
@@ -187,8 +192,9 @@ $(document).ready(function (){
                 $(".input-cell.selected").removeClass("selected top-cell-selected bottom-cell-selected left-cell-selected right-cell-selected");
                 cell.className += " selected";
             }
-    
+            changeHeader(cell);
         })
+
     
         //make cell editable on doubleclick
         cell.addEventListener("dblclick", function () {
@@ -201,6 +207,22 @@ $(document).ready(function (){
         });
 
     });
+    
+    function changeHeader(ele){
+        let [rowId, colId] = getRowCol(ele);
+        let cellInfo = defaultProperties;
+        if(cellData[selectedSheet][rowId] && cellData[selectedSheet][rowId][colId]){
+            cellInfo = cellData[selectedSheet][rowId][colId];
+        }
+
+        cellInfo["font-weight"] ? $(".icon-bold").addClass("selected") : $(".icon-bold").removeClass("selected")
+        cellInfo["font-style"] ? $(".icon-italic").addClass("selected") : $(".icon-italic").removeClass("selected")
+        cellInfo["text-decoration"] ? $(".icon-underline").addClass("selected") : $(".icon-underline").removeClass("selected")
+
+        let alignment = cellInfo["text-align"];
+        $(".align-icon.selected").removeClass("selected");
+        $(".icon-align-" + alignment).addClass("selected");
+    }
 
     //removing contenteditable on focus loss
     $(".input-cell").blur(function(){
@@ -265,7 +287,21 @@ $(document).ready(function (){
         }
     })
 
-    
+    $(".icon-align-left").click(function (){
+        if($(this).hasClass("selected")){
+            updateCell("text-align", "left", true);
+        }
+    })
+    $(".icon-align-center").click(function (){
+        if($(this).hasClass("selected")){
+            updateCell("text-align", "center", false);
+        }
+    })
+    $(".icon-align-right").click(function (){
+        if($(this).hasClass("selected")){
+            updateCell("text-align", "right", false);
+        }
+    })
     
     //Making row and column scroll with input-cell-container
     inputCellContainer.addEventListener("scroll", function () {

@@ -246,9 +246,9 @@ body{
 .input-cell{
     min-width: 100px;
     min-height: 4vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     border-right: 1px solid lightgray;
     border-bottom: 1px solid lightgray;    
     outline-color: #107c41;   
