@@ -162,7 +162,7 @@ $(document).ready(function (){
 
             }
             else {
-                document.querySelector(".input-cell.selected").classList.remove("selected");
+                $(".input-cell.selected").removeClass("selected top-cell-selected bottom-cell-selected left-cell-selected right-cell-selected");
                 cell.className += " selected";
             }
     
