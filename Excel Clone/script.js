@@ -1,3 +1,25 @@
+let defaultProperties = {
+    text: "",
+    "font-weight": "",
+    "font-style": "",
+    "text-decoration": "",
+    "text-align": "left",
+    "background-color": "white",
+    "color": "black",
+    "font-family": "Noto Sans",
+    "font-size": 14
+}
+
+let cellData = {
+    "Sheet1": {
+
+    }
+}
+
+let selectedSheet = "Sheet1";
+let totalSheets = 1;
+
+
 $(document).ready(function (){
 
     //Logic for align item buttons
@@ -186,34 +208,64 @@ $(document).ready(function (){
     })
     
     //Adding properties to cells (bold italics etc))
-    function updateCell(property, value){
+    function updateCell(property, value, defaultPossible){
         $(".input-cell.selected").each(function(){
-            $(this).css(property, value);  
-        })
+            $(this).css(property, value); 
+            //updating cell data object
+            let [rowId, colId] = getRowCol(this);
+            //Case when the data of row of selected cell already exists
+            if(cellData[selectedSheet][rowId]){
+                //Case when both row and col data exists so we only need to update the properties
+                if(cellData[selectedSheet][rowId][colId]){
+                    cellData[selectedSheet][rowId][colId][property] = value;
+                }
+                //case when row data exists but we now update a cell on a new column
+                else{
+                    //copy defaultProperties to colId
+                    cellData[selectedSheet][rowId][colId] = {...defaultProperties};
+                    cellData[selectedSheet][rowId][colId][property] = value;
+                }
+            }
+            //case when a new row is selected 
+            else{
+                cellData[selectedSheet][rowId] = {};
+                cellData[selectedSheet][rowId][colId] = {...defaultProperties};
+                cellData[selectedSheet][rowId][colId][property] = value;
+            }
+            //checking if cell propperties are default or not by stringifying both and comparing
+            if(defaultPossible && JSON.stringify(cellData[selectedSheet][rowId][colId]) === JSON.stringify(defaultProperties)){
+                delete cellData[selectedSheet][rowId][colId];
+                //if after deleting that colId data our row array is empty then delete that as well
+                if(Object.keys(cellData[selectedSheet][rowId]).length == 0){
+                    delete cellData[selectedSheet][rowId];
+                }
+            }
+        });
     }
 
     $(".icon-bold").click(function (){
         if($(this).hasClass("selected")){
-            updateCell("font-weight", "");
+            updateCell("font-weight", "", true);
         }else{  
-            updateCell("font-weight", "bold");
+            updateCell("font-weight", "bold", false);
         }
     })
     $(".icon-italic").click(function (){
         if($(this).hasClass("selected")){
-            updateCell("font-style", "");
+            updateCell("font-style", "", true);
         }else{  
-            updateCell("font-style", "italic");
+            updateCell("font-style", "italic", false);
         }
     })
     $(".icon-underline").click(function (){
         if($(this).hasClass("selected")){
-            updateCell("text-decoration", "");
+            updateCell("text-decoration", "", true);
         }else{  
-            updateCell("text-decoration", "underline");
+            updateCell("text-decoration", "underline", false);
         }
     })
 
+    
     
     //Making row and column scroll with input-cell-container
     inputCellContainer.addEventListener("scroll", function () {
