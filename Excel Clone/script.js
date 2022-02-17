@@ -4,10 +4,10 @@ let defaultProperties = {
     "font-style": "",
     "text-decoration": "",
     "text-align": "left",
-    "background-color": "white",
-    "color": "black",
-    "font-family": "Noto Sans",
-    "font-size": 14
+    "background-color": "#ffffff",
+    "color": "#000000",
+    "font-family": "Arial",
+    "font-size": "14px"
 }
 
 let cellData = {
@@ -222,6 +222,9 @@ $(document).ready(function (){
         let alignment = cellInfo["text-align"];
         $(".align-icon.selected").removeClass("selected");
         $(".icon-align-" + alignment).addClass("selected");
+        $(".text-color-picker").val(cellInfo["color"]);
+        $(".font-family-selector").val(cellInfo["font-family"]);
+        $(".font-size-selector").val(cellInfo["font-size"]);
     }
 
     //removing contenteditable on focus loss
@@ -302,7 +305,27 @@ $(document).ready(function (){
             updateCell("text-align", "right", false);
         }
     })
+
+
+    $(".font-size-selector").change(function (){
+        updateCell("font-size", $(this).val(), true);
+    });
+    $(".font-family-selector").change(function (){
+        updateCell("font-family", $(".font-family-selector :selected").val(), true);
+    });
     
+
+    $(".icon-color-text").click(function (){
+        $(".text-color-picker").click();
+    });
+    $(".text-color-picker").change(function (){
+        updateCell("color", `${$(".text-color-picker").val()}`, true);
+    });
+    
+
+
+
+
     //Making row and column scroll with input-cell-container
     inputCellContainer.addEventListener("scroll", function () {
     
@@ -312,5 +335,3 @@ $(document).ready(function (){
     });
 
 })
-
-

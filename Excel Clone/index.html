@@ -25,8 +25,8 @@
             <div class="material-icons menu-icon icon-italic style-icon">format_italic</div>
             <div class="material-icons menu-icon icon-underline style-icon">format_underline</div>
             <select class="selector font-family-selector">
-                <option style="font-family: Noto Sans;" value="Noto Sans">Noto Sans</option>
-                <option style="font-family:Arial" value="Arial">Arial</option>
+                <!-- <option style="font-family: Noto Sans;" value="Noto Sans" selected>Noto Sans</option> -->
+                <option style="font-family:Arial" value="Arial" selected>Arial</option>
                 <option style="font-family:Calibri" value="Calibri">Calibri</option>
                 <option style="font-family:Comic Sans MS" value="Comic Sans MS">Comic Sans MS</option>
                 <option style="font-family:Courier New" value="Courier New">Courier New</option>
@@ -39,16 +39,16 @@
                 <option style="font-family:Verdana" value="Verdana">Verdana</option>
             </select>
             <select class="selector font-size-selector">
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-                <option value="16">16</option>
-                <option value="18">18</option>
-                <option value="20">20</option>
-                <option value="22">22</option>
-                <option value="24">24</option>
-                <option value="28">28</option>
-                <option value="34">34</option>
+                <option value="10px">10</option>
+                <option value="12px">12</option>
+                <option value="14px">14</option>
+                <option value="16px">16</option>
+                <option value="18px">18</option>
+                <option value="20px">20</option>
+                <option value="22px">22</option>
+                <option value="24px">24</option>
+                <option value="28px">28</option>
+                <option value="34px">34</option>
             </select>
             <div class="material-icons menu-icon icon-cut">content_cut</div>
             <div class="material-icons menu-icon icon-copy">content_copy</div>
@@ -56,8 +56,11 @@
             <div class="material-icons menu-icon icon-align-left align-icon selected">format_align_left</div>
             <div class="material-icons menu-icon icon-align-center align-icon">format_align_center</div>
             <div class="material-icons menu-icon icon-align-right align-icon">format_align_right</div>
-            <div class="material-icons menu-icon icon-color_fill">format_color_fill</div>
-            <div class="material-icons menu-icon icon-color-text">format_color_text</div>
+            <!-- <div class="material-icons menu-icon icon-color_fill">format_color_fill</div> -->
+            <div class="menu-icon icon-color-parent">
+                <input class="color-picker text-color-picker" value="#000000" type="color" />
+                <div class="material-icons icon-color-text">format_color_text</div>
+            </div>
 
         </div>
         <div class="formula-bar">

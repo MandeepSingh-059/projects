@@ -90,7 +90,19 @@ body{
 }
 
 
+.icon-color-parent{
+    position: relative;
+}
 
+.text-color-picker{
+    position: absolute;
+    border: none;
+    top: 1rem;   
+    right: 0.4rem; 
+    max-width: 29px;
+    max-height: 12px;
+    background-color: transparent;
+}
 
 
 
@@ -249,6 +261,8 @@ body{
     /* display: flex;
     justify-content: center;
     align-items: center; */
+    font-size: 14px;
+    font-family: arial;
     border-right: 1px solid lightgray;
     border-bottom: 1px solid lightgray;    
     outline-color: #107c41;   
