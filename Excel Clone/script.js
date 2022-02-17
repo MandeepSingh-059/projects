@@ -196,8 +196,8 @@ $(document).ready(function (){
         })
 
     
-        //make cell editable on doubleclick
-        cell.addEventListener("dblclick", function () {
+        //make cell editable on click
+        cell.addEventListener("click", function () {
     
             document.querySelector(".input-cell.selected").classList.remove("selected");
             cell.className += " selected";
