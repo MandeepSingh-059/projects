@@ -11,12 +11,12 @@ let defaultProperties = {
 }
 
 let cellData = {
-    "Sheet1": {
+    "Sheet-1": {
 
     }
 }
 
-let selectedSheet = "Sheet1";
+let selectedSheet = "Sheet-1";
 let totalSheets = 1;
 let lastSheet = 1;
 
@@ -361,7 +361,7 @@ function emptySheet(){
 //Load data from the cellData object
 function loadSheet(){
     let sheetInfo = cellData[selectedSheet];
-
+console.log(cellData)
     for(let i of Object.keys(sheetInfo)){
         for(let j of Object.keys(sheetInfo[i])){
             let cellInfo = cellData[selectedSheet][i][j];
@@ -383,11 +383,31 @@ function loadSheet(){
 $(`.icon-add`).click(function (){
     emptySheet();
     $(".sheet-tab.selected").removeClass("selected");
-    let sheetName = "Sheet" + (lastSheet + 1);
+    let sheetName = "Sheet-" + (lastSheet + 1);
     cellData[sheetName] = {};
     totalSheets += 1;
     lastSheet += 1;
     selectedSheet = sheetName;
     $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheetName}</div>`);
+    //for 2nd 3rd ... sheets
+    $(".sheet-tab.selected").click(function (){
+        if(!($(this).hasClass("selected"))){
+            selectSheet(this);
+        }
+    })
 })
 
+//for first sheet
+$(".sheet-tab").click(function (){
+    if(!($(this).hasClass("selected"))){
+        selectSheet(this);
+    }
+})
+
+function selectSheet(ele){
+    $(".sheet-tab.selected").removeClass("selected");
+    $(ele).addClass("selected");
+    emptySheet();
+    selectedSheet = $(ele).text();
+    loadSheet();   
+}
