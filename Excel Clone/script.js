@@ -18,9 +18,9 @@ let cellData = {
 
 let selectedSheet = "Sheet1";
 let totalSheets = 1;
+let lastSheet = 1;
 
-
-$(document).ready(function (){
+$(document).ready(function () {
 
     //Logic for align item buttons
     // const alignIcon = document.querySelectorAll(".align-icon");
@@ -30,19 +30,19 @@ $(document).ready(function (){
     //         icon.className += " selected";
     //     });
     // });
-    $(".align-icon").click(function(){
+    $(".align-icon").click(function () {
         $(".align-icon.selected").removeClass("selected");
         $(this).addClass("selected");
     });
-    
-    
+
+
     //Logic for style (italics, bold, undeline) buttons
     const styleIcon = document.querySelectorAll(".style-icon");
     styleIcon.forEach((icon) => {
         icon.addEventListener("click", function () {
-    
+
             icon.classList.toggle("selected");
-    
+
             // if(icon.classList.contains("selected")){
             //     icon.classList.remove("selected");
             // }else{
@@ -50,18 +50,18 @@ $(document).ready(function (){
             // }
         });
     });
-    
-    
-    
-    
-    
+
+
+
+
+
     //Calculating column name
     function calcCol(n) {
         let ans = "";
-    
+
         while (n > 0) {
             rem = n % 26;
-    
+
             if (rem === 0) {
                 ans = "Z" + ans;
                 n = Math.floor(n / 26) - 1;
@@ -73,34 +73,34 @@ $(document).ready(function (){
         }
         return ans;
     }
-    
+
     //Create and add column to the page
     function createCol(n) {
         const columnNameContainer = document.querySelector(".column-name-container");
-    
+
         const columnName = document.createElement("div");
         columnName.textContent = calcCol(n);
         columnName.setAttribute("class", "column-name");
         columnName.setAttribute("data-colCode", columnName.textContent);
         columnName.setAttribute("data-colId", n);
-    
+
         columnNameContainer.appendChild(columnName);
         return columnName.textContent;
     }
-    
+
     //Create and add row to the page
     function createRow(n) {
         const columnNameContainer = document.querySelector(".row-name-container");
-    
+
         const rowName = document.createElement("div");
         rowName.textContent = n;
         rowName.setAttribute("class", "row-name");
         rowName.setAttribute("data-rowId", n);
-    
+
         columnNameContainer.appendChild(rowName);
         return rowName;
     }
-    
+
     //creating the cell
     function createCell(row, col, colCode) {
         const cell = document.createElement("div");
@@ -114,15 +114,15 @@ $(document).ready(function (){
         cell.setAttribute("contenteditable", "false");
         return cell;
     }
-    
+
     //function to get row and column code
     function getRowCol(ele) {
         let idArray = $(ele).attr("id").split("-");
         let rowId = parseInt(idArray[1]);
         let colId = parseInt(idArray[3]);
-        return [rowId,colId];
+        return [rowId, colId];
     }
-    
+
     //populating the data container
     function populateDataContainer(maxRow, maxCol, inputCellContainer) {
         for (let i = 1; i <= maxRow; i++) {
@@ -130,7 +130,7 @@ $(document).ready(function (){
             const row = document.createElement("div");
             row.setAttribute("class", "row");
             row.style.display = "flex";
-    
+
             for (let j = 1; j <= maxCol; j++) {
                 let code;
                 if (i == 1) {
@@ -142,18 +142,29 @@ $(document).ready(function (){
             inputCellContainer.appendChild(row);
         }
     }
-    
+
+
     let maxRow = maxCol = 100;
     const inputCellContainer = document.getElementsByClassName('input-cell-container')[0]; //get 0th element with class name this
-    
+
     populateDataContainer(maxRow, maxCol, inputCellContainer);
-    
-    
+
+
+
+    //Making row and column scroll with input-cell-container
+    inputCellContainer.addEventListener("scroll", function () {
+
+        document.querySelector(".column-name-container").scrollLeft = inputCellContainer.scrollLeft;
+        document.querySelector(".row-name-container").scrollTop = inputCellContainer.scrollTop;
+
+    });
+
+
     //Logic to select Cells
     document.querySelector(".input-cell").className += " selected";
     const inputCell = document.querySelectorAll(".input-cell");
     inputCell.forEach((cell) => {
-    
+
         cell.addEventListener("click", (e) => {
             if (e.ctrlKey) {
                 let [rowId, colId] = getRowCol(cell);
@@ -195,23 +206,23 @@ $(document).ready(function (){
             changeHeader(cell);
         })
 
-    
+
         //make cell editable on click
         cell.addEventListener("click", function () {
-    
+
             document.querySelector(".input-cell.selected").classList.remove("selected");
             cell.className += " selected";
             cell.contentEditable = "true";
             cell.focus();
-    
+
         });
 
     });
-    
-    function changeHeader(ele){
+
+    function changeHeader(ele) {
         let [rowId, colId] = getRowCol(ele);
         let cellInfo = defaultProperties;
-        if(cellData[selectedSheet][rowId] && cellData[selectedSheet][rowId][colId]){
+        if (cellData[selectedSheet][rowId] && cellData[selectedSheet][rowId][colId]) {
             cellInfo = cellData[selectedSheet][rowId][colId];
         }
 
@@ -228,110 +239,155 @@ $(document).ready(function (){
     }
 
     //removing contenteditable on focus loss
-    $(".input-cell").blur(function(){
+    $(".input-cell").blur(function () {
         $(".input-cell.selected").attr("contenteditable", false);
+        updateCell("text", $(this).text(), true);
+        console.log($(this).text())
     })
-    
+
     //Adding properties to cells (bold italics etc))
-    function updateCell(property, value, defaultPossible){
-        $(".input-cell.selected").each(function(){
-            $(this).css(property, value); 
+    function updateCell(property, value, defaultPossible) {
+        $(".input-cell.selected").each(function () {
+            $(this).css(property, value);
             //updating cell data object
             let [rowId, colId] = getRowCol(this);
             //Case when the data of row of selected cell already exists
-            if(cellData[selectedSheet][rowId]){
+            if (cellData[selectedSheet][rowId]) {
                 //Case when both row and col data exists so we only need to update the properties
-                if(cellData[selectedSheet][rowId][colId]){
+                if (cellData[selectedSheet][rowId][colId]) {
                     cellData[selectedSheet][rowId][colId][property] = value;
                 }
                 //case when row data exists but we now update a cell on a new column
-                else{
+                else {
                     //copy defaultProperties to colId
-                    cellData[selectedSheet][rowId][colId] = {...defaultProperties};
+                    cellData[selectedSheet][rowId][colId] = { ...defaultProperties };
                     cellData[selectedSheet][rowId][colId][property] = value;
                 }
             }
             //case when a new row is selected 
-            else{
+            else {
                 cellData[selectedSheet][rowId] = {};
-                cellData[selectedSheet][rowId][colId] = {...defaultProperties};
+                cellData[selectedSheet][rowId][colId] = { ...defaultProperties };
                 cellData[selectedSheet][rowId][colId][property] = value;
             }
             //checking if cell propperties are default or not by stringifying both and comparing
-            if(defaultPossible && JSON.stringify(cellData[selectedSheet][rowId][colId]) === JSON.stringify(defaultProperties)){
+            if (defaultPossible && JSON.stringify(cellData[selectedSheet][rowId][colId]) === JSON.stringify(defaultProperties)) {
                 delete cellData[selectedSheet][rowId][colId];
                 //if after deleting that colId data our row array is empty then delete that as well
-                if(Object.keys(cellData[selectedSheet][rowId]).length == 0){
+                if (Object.keys(cellData[selectedSheet][rowId]).length == 0) {
                     delete cellData[selectedSheet][rowId];
                 }
             }
         });
+        console.log(cellData);
     }
 
-    $(".icon-bold").click(function (){
-        if($(this).hasClass("selected")){
+    $(".icon-bold").click(function () {
+        if ($(this).hasClass("selected")) {
             updateCell("font-weight", "", true);
-        }else{  
+        } else {
             updateCell("font-weight", "bold", false);
         }
     })
-    $(".icon-italic").click(function (){
-        if($(this).hasClass("selected")){
+    $(".icon-italic").click(function () {
+        if ($(this).hasClass("selected")) {
             updateCell("font-style", "", true);
-        }else{  
+        } else {
             updateCell("font-style", "italic", false);
         }
     })
-    $(".icon-underline").click(function (){
-        if($(this).hasClass("selected")){
+    $(".icon-underline").click(function () {
+        if ($(this).hasClass("selected")) {
             updateCell("text-decoration", "", true);
-        }else{  
+        } else {
             updateCell("text-decoration", "underline", false);
         }
     })
 
-    $(".icon-align-left").click(function (){
-        if($(this).hasClass("selected")){
+    $(".icon-align-left").click(function () {
+        if ($(this).hasClass("selected")) {
             updateCell("text-align", "left", true);
         }
     })
-    $(".icon-align-center").click(function (){
-        if($(this).hasClass("selected")){
+    $(".icon-align-center").click(function () {
+        if ($(this).hasClass("selected")) {
             updateCell("text-align", "center", false);
         }
     })
-    $(".icon-align-right").click(function (){
-        if($(this).hasClass("selected")){
+    $(".icon-align-right").click(function () {
+        if ($(this).hasClass("selected")) {
             updateCell("text-align", "right", false);
         }
     })
 
 
-    $(".font-size-selector").change(function (){
+    $(".font-size-selector").change(function () {
         updateCell("font-size", $(this).val(), true);
     });
-    $(".font-family-selector").change(function (){
+    $(".font-family-selector").change(function () {
         updateCell("font-family", $(".font-family-selector :selected").val(), true);
     });
-    
 
-    $(".icon-color-text").click(function (){
+
+    $(".icon-color-text").click(function () {
         $(".text-color-picker").click();
     });
-    $(".text-color-picker").change(function (){
+    $(".text-color-picker").change(function () {
         updateCell("color", `${$(".text-color-picker").val()}`, true);
     });
     
+})
 
 
+//this will not delete data in cellData object just set the css like default 
+function emptySheet(){
+    let sheetInfo = cellData[selectedSheet];
+
+    for(let i of Object.keys(sheetInfo)){
+        for(let j of Object.keys(sheetInfo[i])){
+            $(`#row-${i}-col-${j}`).text("");
+            $(`#row-${i}-col-${j}`).css("background-color", "#ffffff");
+            $(`#row-${i}-col-${j}`).css("color", "#000000");
+            $(`#row-${i}-col-${j}`).css("text-align", "left");
+            $(`#row-${i}-col-${j}`).css("font-weight", "");
+            $(`#row-${i}-col-${j}`).css("font-style", "");
+            $(`#row-${i}-col-${j}`).css("text-decoration", "");
+            $(`#row-${i}-col-${j}`).css("font-family", "Arial");
+            $(`#row-${i}-col-${j}`).css("font-size", "14px");
+        }
+    }
+}
+
+//Load data from the cellData object
+function loadSheet(){
+    let sheetInfo = cellData[selectedSheet];
+
+    for(let i of Object.keys(sheetInfo)){
+        for(let j of Object.keys(sheetInfo[i])){
+            let cellInfo = cellData[selectedSheet][i][j];
+            console.log(cellInfo);
+            $(`#row-${i}-col-${j}`).text(cellInfo["text"]);
+            $(`#row-${i}-col-${j}`).css("background-color", cellInfo["background-color"]);
+            $(`#row-${i}-col-${j}`).css("color", cellInfo["color"]);
+            $(`#row-${i}-col-${j}`).css("text-align", cellInfo["text-align"]);
+            $(`#row-${i}-col-${j}`).css("font-weight", cellInfo["font-weight"]);
+            $(`#row-${i}-col-${j}`).css("font-style", cellInfo["font-style"]);
+            $(`#row-${i}-col-${j}`).css("text-decoration", cellInfo["text-decoration"]);
+            $(`#row-${i}-col-${j}`).css("font-family", cellInfo["font-family"]);
+            $(`#row-${i}-col-${j}`).css("font-size", cellInfo["font-size"]);
+        }
+    }
+}
 
 
-    //Making row and column scroll with input-cell-container
-    inputCellContainer.addEventListener("scroll", function () {
-    
-        document.querySelector(".column-name-container").scrollLeft = inputCellContainer.scrollLeft;
-        document.querySelector(".row-name-container").scrollTop = inputCellContainer.scrollTop;
-    
-    });
+$(`.icon-add`).click(function (){
+    emptySheet();
+    let sheetName = "Sheet" + (lastSheet + 1);
+    console.log("Sheet" + (lastSheet + 1))
+    cellData[sheetName] = {};
+    totalSheets += 1;
+    lastSheet += 1;
+    selectedSheet = sheetName;
 
 })
+
