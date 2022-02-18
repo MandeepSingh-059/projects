@@ -382,12 +382,12 @@ function loadSheet(){
 
 $(`.icon-add`).click(function (){
     emptySheet();
+    $(".sheet-tab.selected").removeClass("selected");
     let sheetName = "Sheet" + (lastSheet + 1);
-    console.log("Sheet" + (lastSheet + 1))
     cellData[sheetName] = {};
     totalSheets += 1;
     lastSheet += 1;
     selectedSheet = sheetName;
-
+    $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheetName}</div>`);
 })
 
