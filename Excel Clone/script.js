@@ -242,7 +242,6 @@ $(document).ready(function () {
     $(".input-cell").blur(function () {
         $(".input-cell.selected").attr("contenteditable", false);
         updateCell("text", $(this).text(), true);
-        console.log($(this).text())
     })
 
     //Adding properties to cells (bold italics etc))
@@ -279,7 +278,6 @@ $(document).ready(function () {
                 }
             }
         });
-        console.log(cellData);
     }
 
     $(".icon-bold").click(function () {
@@ -361,7 +359,6 @@ function emptySheet(){
 //Load data from the cellData object
 function loadSheet(){
     let sheetInfo = cellData[selectedSheet];
-console.log(cellData)
     for(let i of Object.keys(sheetInfo)){
         for(let j of Object.keys(sheetInfo[i])){
             let cellInfo = cellData[selectedSheet][i][j];
@@ -390,19 +387,51 @@ $(`.icon-add`).click(function (){
     selectedSheet = sheetName;
     $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheetName}</div>`);
     //for 2nd 3rd ... sheets
+    addSheetEvents();    
+})
+
+function addSheetEvents(){
     $(".sheet-tab.selected").click(function (){
         if(!($(this).hasClass("selected"))){
             selectSheet(this);
         }
     })
-})
+    $(".sheet-tab.selected").contextmenu(function(e){
+        e.preventDefault();
+        if($(".sheet-options-modal").length == 0){
+            $(".container").append(`<div class="sheet-options-modal">
+                                        <div class="sheet-delete">Delete</div>
+                                    </div>`);
+            $(".sheet-options-modal").css("left", (e.pageX-30) + "px");
+            $(".sheet-delete").click(function (){
+                if(Object.keys(cellData).length > 1){
+                    let currSheet = $(".sheet-tab.selected");
+                    let currSheetName = selectedSheet;
+                    let currSheetIndex = Object.keys(cellData).indexOf(selectedSheet);
+                    if(currSheetIndex == 0){
+                        $(".sheet-tab.selected").next().click();
+                    } else {
+                        $(".sheet-tab.selected").prev().click();
+                    }
+                    delete cellData[currSheetName];
+                    currSheet.remove();
+                    console.log(cellData);
 
+                }
+                else{
+                    alert("Warning: Cannot delete this sheet");
+                }
+            });
+        }
+    })
+}
 //for first sheet
-$(".sheet-tab").click(function (){
-    if(!($(this).hasClass("selected"))){
-        selectSheet(this);
-    }
-})
+addSheetEvents();
+
+$(".container").click(function(){
+    $(".sheet-options-modal").remove();
+});
+
 
 function selectSheet(ele){
     $(".sheet-tab.selected").removeClass("selected");
@@ -411,3 +440,4 @@ function selectSheet(ele){
     selectedSheet = $(ele).text();
     loadSheet();   
 }
+
