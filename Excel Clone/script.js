@@ -133,9 +133,7 @@ $(document).ready(function () {
 
             for (let j = 1; j <= maxCol; j++) {
                 let code;
-                if (i == 1) {
-                    code = createCol(j);
-                }
+                code = createCol(j);
                 const cell = createCell(i, j, code);
                 row.appendChild(cell);
             }
@@ -166,8 +164,8 @@ $(document).ready(function () {
     inputCell.forEach((cell) => {
 
         cell.addEventListener("click", (e) => {
+            let [rowId, colId] = getRowCol(cell);
             if (e.ctrlKey) {
-                let [rowId, colId] = getRowCol(cell);
                 if (rowId > 1) {
                     let topCellSelected = $(`#row-${rowId - 1}-col-${colId}`).hasClass("selected");
                     if (topCellSelected) {
@@ -204,6 +202,10 @@ $(document).ready(function () {
                 cell.className += " selected";
             }
             changeHeader(cell);
+                //setting the formula-editor selected-cell element
+                const cCode = $(".input-cell.selected").attr("data-code");
+                const rCode = $(".input-cell.selected").attr("id");
+                $(".selected-cell").text(rowId + " : " + cCode);
         })
 
 
@@ -218,6 +220,8 @@ $(document).ready(function () {
         });
 
     });
+
+
 
     function changeHeader(ele) {
         let [rowId, colId] = getRowCol(ele);

@@ -131,6 +131,8 @@ body{
 }
 .selected-cell{
     width: 100px;
+    display: flex;
+    justify-content: center;
 }
 .function-sign{
     height: 70%;
@@ -312,3 +314,27 @@ body{
 }
 
 
+
+
+/* OPEN and SAVE */
+
+.menu-file{
+    position: relative;
+}
+.btn-save,.btn-open{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: #107c41;
+    top: 100%;   
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.btn-open{
+    top: 200%;   
+}
+.btn-save:hover,.btn-open:hover{
+    background-color: #09572c;
+}
