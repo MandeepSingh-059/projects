@@ -340,7 +340,7 @@ $(document).ready(function () {
     });
 
     //this will not delete data in cellData object just set the css like default 
-    function emptySheet() {
+    window.emptySheet = function emptySheet() {
         let sheetInfo = cellData[selectedSheet];
 
         for (let i of Object.keys(sheetInfo)) {
@@ -359,12 +359,12 @@ $(document).ready(function () {
     }
 
     //Load data from the cellData object
-    function loadSheet() {
+    window.loadSheet = function loadSheet() {
         let sheetInfo = cellData[selectedSheet];
         for (let i of Object.keys(sheetInfo)) {
             for (let j of Object.keys(sheetInfo[i])) {
                 let cellInfo = cellData[selectedSheet][i][j];
-                console.log(cellInfo);
+                // console.log(cellInfo);
                 $(`#row-${i}-col-${j}`).text(cellInfo["text"]);
                 $(`#row-${i}-col-${j}`).css("background-color", cellInfo["background-color"]);
                 $(`#row-${i}-col-${j}`).css("color", cellInfo["color"]);
@@ -378,9 +378,7 @@ $(document).ready(function () {
         }
     }
 
-
-    $(`.icon-add`).click(function () {
-        emptySheet();
+    function addSheet(){
         $(".sheet-tab.selected").removeClass("selected");
         let sheetName = "Sheet-" + (lastSheet + 1);
         cellData[sheetName] = {};
@@ -390,9 +388,14 @@ $(document).ready(function () {
         $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheetName}</div>`);
         //for 2nd 3rd ... sheets
         addSheetEvents();
+    }
+
+    $(`.icon-add`).click(function () {
+        emptySheet();
+        addSheet();
     })
 
-    function addSheetEvents() {
+    window.addSheetEvents = function addSheetEvents() {
         $(".sheet-tab.selected").click(function () {
             if (!($(this).hasClass("selected"))) {
                 selectSheet(this);
@@ -453,8 +456,6 @@ $(document).ready(function () {
         });
         cut = true;
     });
-
-
     $(".icon-copy").click(function () {
         $(".input-cell.selected").each(function () {
             // let [rowId, colId] = getRowCol($(this));

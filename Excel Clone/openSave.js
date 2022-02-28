@@ -17,11 +17,67 @@ $(document).ready(function(){
             a.click();
         })
     
+        //Upload
+        $(".btn-open").click(function (){
+
+            let input = document.createElement("input");
+            input.setAttribute("type", "file");
+            input.click();
+            input.addEventListener("change", () => {
+                let fr = new FileReader();
+                let files = input.files;
+                let fileObj = files[0];
+
+                fr.readAsText(fileObj);
+                fr.addEventListener("load", () => {
+                    let readSheetData = JSON.parse(fr.result);
+                    cellData = readSheetData;
+
+                    totalSheets = 0;
+                    lastSheet = 0;
+                    selectedSheet = "";
+
+                    $(".sheet-tab").remove();   
+
+                    for(sheet in readSheetData){
+                        
+                        selectedSheet = `${sheet}`; 
+
+                        emptySheet();
+                        addFreshSheet(sheet);
+                        loadSheet();
+                    }
+                    
+                })
+
+            })
+
+        });
 
 
 
-    });
-   
+
+
+        function addFreshSheet(sheet){
+            $(".sheet-tab.selected").removeClass("selected");
+            totalSheets += 1;
+            lastSheet += 1;
+            $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheet}</div>`);
+            addSheetEvents();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    });   
    
     $(".menu-file").mouseleave(function (){
         $(".btn-save, .btn-open").remove();
