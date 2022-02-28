@@ -30,6 +30,8 @@ $(document).ready(function(){
 
                 fr.readAsText(fileObj);
                 fr.addEventListener("load",async () => {
+                    await emptySheet();
+
                     let readSheetData = JSON.parse(fr.result);
                     cellData = readSheetData;
 
