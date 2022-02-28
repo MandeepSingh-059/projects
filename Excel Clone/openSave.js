@@ -29,7 +29,7 @@ $(document).ready(function(){
                 let fileObj = files[0];
 
                 fr.readAsText(fileObj);
-                fr.addEventListener("load", () => {
+                fr.addEventListener("load",async () => {
                     let readSheetData = JSON.parse(fr.result);
                     cellData = readSheetData;
 
@@ -43,9 +43,10 @@ $(document).ready(function(){
                         
                         selectedSheet = `${sheet}`; 
 
-                        emptySheet();
                         addFreshSheet(sheet);
+                        await emptySheet();
                         loadSheet();
+                        selectSheet(document.querySelector(".sheet-tab"));
                     }
                     
                 })
@@ -54,28 +55,13 @@ $(document).ready(function(){
 
         });
 
-
-
-
-
         function addFreshSheet(sheet){
-            $(".sheet-tab.selected").removeClass("selected");
+            $(".sheet-tab").removeClass("selected");
             totalSheets += 1;
             lastSheet += 1;
             $(".sheet-tab-container").append(`<div class="sheet-tab selected">${sheet}</div>`);
             addSheetEvents();
         }
-
-
-
-
-
-
-
-
-
-
-
 
     });   
    

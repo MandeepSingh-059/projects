@@ -438,7 +438,7 @@ $(document).ready(function () {
     });
 
 
-    function selectSheet(ele) {
+    window.selectSheet = function selectSheet(ele) {
         $(".sheet-tab.selected").removeClass("selected");
         $(ele).addClass("selected");
         emptySheet();
